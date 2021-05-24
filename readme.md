@@ -21,3 +21,5 @@ pedir um nome de usuário, e-mail e senha.
 Por fim basta rodar o projeto.
 
 `python manage.py runserver`
+
+Link do projeto: https://youtu.be/n_40riuFqas
