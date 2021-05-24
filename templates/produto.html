@@ -1,0 +1,40 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<section>
+    <div class="container text-center p-2">
+        <h4 class="p-2">LISTA DE PRODUTOS</h4>
+
+        <a href="/cadastra_produto">
+          <button type="button" class="btn btn-secondary">CADASTRAR</button>
+        </a>
+            <div class="card-body">
+                 <div class="text-left">
+                   <table class="table  table-xl table-primary">
+                        <thead class="claro">
+                                      <tr>
+                                            <th scope="col">PRODUTOS</th>
+                                            <th scope="col">AÇÃO</th>
+                                            <tbody>
+                                      </tr>
+                                        {% for i in produto %}
+                                                <th scope="col">
+                                                        {{i.nome_produto}}
+                                                     </th>
+
+                                                <td>
+                                                    <a href="/deleta/{{ i.id }}">
+                                                         <button type="button" class="btn btn-danger">EXCLUIR</button>
+                                                    </a>
+                                                </td>
+                                            </tbody>
+                                        {% endfor %}
+                                      </tr>
+                                    </thead>
+                                </table>
+
+                    </div>
+            </div>
+    </div>
+</section>
+{% endblock %}

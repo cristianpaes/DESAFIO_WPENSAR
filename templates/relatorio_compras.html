@@ -1,0 +1,33 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<section>
+    <div class="container text-center p-2">
+        <h4 class="p-2">RELATORIO DE COMPRAS</h4>
+            <div class="card-body">
+                    <div class="text-left">
+                        <table class="table  table-xl table-primary">
+                            <thead class="claro">
+                            <tr>
+                                <th scope="col">PRODUTO</th>
+                                <th scope="col">QUANTIDADE TOTAL</th>
+                                <th scope="col">VALOR TOTAL</th>
+                                <th scope="col">VALOR MÉDIO DO PRODUTO</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for p in produtos %}
+                            <tr>
+                                <td scope="col"><b>{{ p.nome_produto }}</b></td>
+                                <td scope="col"><b>{{ p.quantidade }}</b></td>
+                                <td scope="col"><b>{{ p.total }}</b></td>
+                                <td scope="col"><b>{{ p.preco_medio }}</b></td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+    </div>
+</section>
+{% endblock %}

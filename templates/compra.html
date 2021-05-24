@@ -1,0 +1,49 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<section>
+    <div class="container text-center p-2">
+        <h4 class="p-2">LISTA DE PRODUTOS COMPRADOS</h4>
+
+        <a href="/cadastra_compras">
+
+                <button type="button" class="btn btn-secondary">CADASTRAR</button>
+
+        </a>
+            <div class="card-body">
+                    <div class="text-left">
+                         <table class="table  table-xl table-primary">
+                              <thead class="claro">
+                                        <tr>
+                                            <th scope="col">PRODUTO</th>
+                                            <th scope="col">QUANTIDADE</th>
+                                            <th scope="col">VALOR</th>
+                                            <th scope="col">AÇÃO</th>
+                                            <tbody>
+                                    {% for i in produtos %}
+                                                 <th scope="col">
+                                                    {{i.produto}}
+                                                </th>
+                                                <th scope="col">
+                                                    <b>{{i.quantidade}}</b>
+                                                </th>
+                                                <th scope="col">
+                                                    <b>{{i.valor_produto}}</b>
+                                                </th>
+
+                                                <td>
+                                                    <a href="/delete/{{ i.id }}">
+                                                         <button type="button" class="btn btn-danger">EXCLUIR</button>
+                                                    </a>
+                                                </td>
+                                            </tbody>
+                                    {% endfor %}
+                                        </tr>
+                                    </thead>
+                                </table>
+
+                    </div>
+            </div>
+    </div>
+</section>
+{% endblock %}
